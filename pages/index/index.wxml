@@ -1,6 +1,12 @@
 <import src="../templates/layouts.wxml"/>
 <template is="layout"></template>
 
-<view>
-  <swiper autoplay='auto'></swiper>
+<view class='swiper-block'>
+  <swiper autoplay='auto'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>

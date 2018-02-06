@@ -1,6 +1,12 @@
 @import '../common/style/base.wxss';
 
-
+.swiper-block{
+  width: 100%;
+}
+.swiper-image{
+  width: 100%;
+  height: 300rpx;
+}
 
 /**index.wxss**/
 .userinfo {
