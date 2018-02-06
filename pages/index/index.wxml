@@ -1,0 +1,6 @@
+<import src="../templates/layouts.wxml"/>
+<template is="layout"></template>
+
+<view>
+  <swiper autoplay='auto'></swiper>
+</view>

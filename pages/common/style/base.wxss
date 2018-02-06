@@ -1,0 +1,5 @@
+.menubg{width:100%;height:140rpx; background:url('http://static.zhongguomayun.com/m/images/nav_bg.jpg');align-items: center;display: flex;justify-content: center;}
+
+.menubg-logo{width: 198rpx;height: 64rpx;}
+.menu{width: 100%;height: 64rpx;overflow:hidden;}
+.menu .menu-nav{float: left; height: 30rpx; padding: 20rpx 30rpx 10px;font-size: 30rpx;}

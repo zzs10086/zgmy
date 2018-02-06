@@ -1,0 +1,12 @@
+<template name="layout">
+    <view class="menubg">
+        <image src="../resources/images/logo.png" class='menubg-logo'></image>
+    </view>
+    <scroll-view scroll-x class="menu">
+     <navigator url='index/index' class='menu-nav'>资讯</navigator>
+     <navigator url='index/index' class='menu-nav'>视频</navigator>
+     <navigator url='index/index' class='menu-nav'>语录</navigator>
+     <navigator url='index/index' class='menu-nav'>阿里资讯</navigator>
+     <navigator url='index/index' class='menu-nav'>阿里故事</navigator>
+    </scroll-view>
+</template>
