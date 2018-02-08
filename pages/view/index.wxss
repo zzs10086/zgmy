@@ -1,0 +1,42 @@
+@import "../../wxParse/wxParse.wxss";
+.view-block{
+  width: 750rpx;
+  margin: 30rpx 0rpx 0rpx 0rpx;
+}
+.v-title{
+    font-size: 38rpx;    
+    width: 100%; 
+    font-weight:550;
+    padding:20rpx;
+    color: #000000;
+}
+.v-panner{
+  width: 100%;
+  margin: 15rpx 5rpx;
+  color: #666666;
+  font-size: 26rpx;
+}
+.v-panner-click{
+  width: 300rpx;
+  float: left;
+  padding-left: 16rpx;
+}
+.v-panner-time{
+  width: 300rpx;
+  float: right;
+  text-align: right;
+  padding-right: 16rpx;
+}
+.v-content{
+  color: #333333;
+  font-size: 30rpx;
+}
+.wxParse-p{
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  padding: 10rpx 10rpx;
+}
+.wxParse-img{
+  width: 90%;
+}

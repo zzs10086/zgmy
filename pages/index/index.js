@@ -4,16 +4,18 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '中国马云',
     scrollTop: 0,
     scrollHeight: 0,
     userInfo: {},
     hasUserInfo: false,
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
-    ],
-    newsList: {}
+    imgUrls: [],
+    newsList: [],
+    hidden: true,
+    page:1,
+    category_id:0,
+    limit: 10,
+    lastPage : false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -31,27 +33,56 @@ Page({
           scrollHeight: res.windowHeight
         });
       }
-    });
-    
-    var params = {};
-    params.page = 1;
-    params.category_id = 0;
-    params.limit = 10;
+    });  
 
-    that._getNewsList(params);
+    that._getNewsFoucs();
+
+    that._getNewsList();    
 
   },
+  _getNewsFoucs:function(){
+    var that = this;
+    var params = {};
 
-  _getNewsList:function (params) {
+    app.request({
+      url: '/api/foucs',
+      data: params,
+      success: function (res) {
+
+        if (res.data.code == 0) {
+          if (res.data.data.length) { // 避免无效请求
+            that.setData({             
+              imgUrls: res.data.data
+            })
+            return;
+          }          
+
+        }
+      }
+
+    });
+  },
+/**
+ * 获取资讯列表
+ */
+  _getNewsList:function () {
 
     var that = this;
+    var params = {};
+    params.page = that.data.page;
+    params.category_id = that.data.category_id;
+    params.limit = that.data.limit;
+
+    that.setData({
+      hidden: false
+    });
+    
     app.request({
       url: '/api/feed',
       data: params,
       success: function (res) {
 
-        if (res.data.code == 0) {
-          console.log(res.data);
+        if (res.data.code == 0) {         
           if (!res.data.data.length) { // 避免无效请求
             that.setData({
               invalid_data: true,
@@ -62,8 +93,7 @@ Page({
           }
 
           that.setData({
-            //newsList: that.data.newsList.concat(res.data.data),
-            newsList: res.data.data,
+            newsList: that.data.newsList.concat(res.data.data),          
             hidden: true
           });
 
@@ -73,6 +103,17 @@ Page({
 
     });
 
+  },
+  //加载更多
+  lowermore: function (e) {
+
+    if (!this.data.lastPage) {      
+      this.setData({
+        page: this.data.page + 1
+      });
+
+      this._getNewsList();
+    }
   },
 
 })

@@ -1,36 +1,48 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/view/index",
+    "pages/video/index",
+    "pages/video_view/index",
+    "pages/news/index",
+    "pages/alibaba/index",
     "pages/logs/logs"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#044177",
+    "navigationBarTitleText": "中国马云",
+    "navigationBarTextStyle": "#ffffff"
   },
   "tabBar":{
     "tabBar": "#666",
-    "selectedColor": "#f25027",
+    "selectedColor": "#125997",
     "backgroundColor": "#fff",
     "list":[
-     {
-      "pagePath": "pages/index/index",
-      "text": "最新",
-      "iconPath": "pages/resources/images/index_default.png",
-      "selectedIconPath": "pages/resources/images/index_select.png"
+    {
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "pages/resources/images/zy_m.png",
+          "selectedIconPath": "pages/resources/images/zy.png"
     },
     {
-      "pagePath": "pages/index/index",
-      "text": "分类",
-      "iconPath": "pages/resources/images/nav_default.png",
-      "selectedIconPath": "pages/resources/images/nav_select.png"
+      "pagePath": "pages/news/index",
+      "text": "马云动态",
+      "iconPath": "pages/resources/images/my_m.png",
+      "selectedIconPath": "pages/resources/images/my.png"
     },
     {
-      "pagePath": "pages/index/index",
-      "text": "我的",
-      "iconPath": "pages/resources/images/me_default.png",
-      "selectedIconPath": "pages/resources/images/me_select.png"
+      "pagePath": "pages/video/index",
+      "text": "精彩视频",
+      "iconPath": "pages/resources/images/m_video_m.png",
+      "selectedIconPath": "pages/resources/images/m_video.png"
+    }    
+    ,
+    {
+      "pagePath": "pages/alibaba/index",
+      "text": "阿里资讯",
+      "iconPath": "pages/resources/images/al_m.png",
+      "selectedIconPath": "pages/resources/images/al.png"
     }
     ]
   }

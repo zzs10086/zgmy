@@ -1,0 +1,8 @@
+<view class="video-box">
+  <video id="myVideo" src="{{article.video_url}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+</view>
+<view><text class='v-title'>{{article.title}}</text></view>
+<view class='video-pan'>
+    <view class='video-time'>{{article.created_at}}</view>
+    <view class='video-count'>播放次数:{{article.click}}</view>
+</view>

@@ -1,0 +1,9 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='view-block'>
+  <view class='v-title'><text>{{article.title}}</text></view>
+  <view class='v-panner'>
+    <view class='v-panner-click'>{{article.click}}已读</view>
+    <view class='v-panner-time'>{{article.created_at}}</view>
+  </view>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}" class="v-content"/>
+</view>

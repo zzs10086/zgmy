@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true" bindscrolltolower="lowermore" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px" lower-threshold="1">
+
+    <view class='box' wx:for="{{newsList}}">    
+    <navigator url="../{{item.is_img==2?'video_view':'view'}}/index?id={{item.id}}"> 
+        <image mode="widthFix" src="{{item.imgurl}}" class="box-img"></image>
+        <view class="box-block">
+             <view class='box_tittle'>{{item.title}}</view>
+             <view class='box_cnt'>
+                <view class='box_time'>{{item.created_at}}</view>
+                <view class='box_click'>阅读:({{item.click}})</view>             
+             </view>
+        </view>
+      </navigator>
+    </view>
+
+</scroll-view>
+
+<view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

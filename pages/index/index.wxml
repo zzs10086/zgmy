@@ -1,25 +1,41 @@
-<import src="../templates/layouts.wxml"/>
-<template is="layout"></template>
+<!--<import src="../templates/layouts.wxml"/>
+<template is="layout"></template>-->
+
+<scroll-view scroll-y="true" bindscrolltolower="lowermore" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px" lower-threshold="1">
 
 <view class='swiper-block'>
   <swiper autoplay='auto'>
     <block wx:for="{{imgUrls}}">
       <swiper-item>
-        <image src="{{item}}" class="swiper-image" width="355" height="150"/>
+        <navigator url="../{{item.is_img==2?'video_view':'view'}}/index?id={{item.id}}">
+        <image src="{{item.imgurl}}" class="swiper-image" width="355" height="150"/>
+        </navigator>
       </swiper-item>
     </block>
   </swiper>
 </view>
 
-<scroll-view scroll-y="true" bindscrolltolower="lowermore" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px" lower-threshold="1">
-
     <view class='box' wx:for="{{newsList}}">
-        <image mode="widthFix" src="{{item.imgurl}}" class="box-img"></image>
 
+
+    <navigator url="../{{item.is_img==2?'video_view':'view'}}/index?id={{item.id}}"> 
+
+        <image mode="widthFix" src="{{item.imgurl}}" class="box-img"></image>
         <view class="box-block">
              <view class='box_tittle'>{{item.title}}</view>
-             <view class='box_time'>{{item.created_at}}</view>
+             <view class='box_cnt'>
+                <view class='box_time'>{{item.created_at}}</view>
+                <view class='box_click'>阅读:({{item.click}})</view>             
+             </view>
         </view>
+      </navigator>
+
     </view>
 
 </scroll-view>
+
+<view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>
